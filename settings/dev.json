@@ -1,0 +1,10 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "public": {
+    "isDebug": true,
+    "facebook": {
+      "appId": "169100816622241",
+      "secret": "0e6837068f02130f79750472439fe3be"
+    }
+  }
+}

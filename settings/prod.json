@@ -1,0 +1,11 @@
+{
+  "baseUrl": "http://roboticks.meteor.com",
+  "public": {
+    "version": "__VERSION__",
+    "isDebug": false,
+    "facebook": {
+      "appId": "1374956356082022",
+      "secret": "eda81c92d1df6ba7d14382030a456e54"
+    }
+  }
+}

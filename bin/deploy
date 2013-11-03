@@ -1,0 +1,6 @@
+#!/bin/bash
+
+DIRNAME=$(cd `dirname $0` && pwd)
+
+sed s/__VERSION__/$(git rev-parse HEAD)/ $DIRNAME/../settings/prod.json > /tmp/prod.json
+meteor deploy pintask.me --settings /tmp/prod.json "$@"

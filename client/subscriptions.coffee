@@ -1,8 +1,9 @@
 root = exports ? this
 
-root.Tasks = new Meteor.Collection('sectors', {
+root.Artefacts = new Meteor.Collection('artefacts', {
   transform: (sector) ->
     sector
 })
 
-Meteor.subscribe 'sectors'
+Meteor.subscribe 'artefacts'
+Meteor.subscribe 'userData'

@@ -1,14 +1,23 @@
 root = exports ? this
 
+Accounts.onCreateUser((options, user) ->
+  if (options.profile)
+    user.profile = options.profile
+  user.x = 0
+  user.y = 0
+  console.log(user);
+  user
+);
+
 Meteor.startup ->
-  if root.Sectors.find().count() is 0
-    sectorsData = [
+  if root.Artefacts.find().count() is 0
+    artefactsData = [
       {
         x: 0
         y: 0
-        letter: 'A'
-        drop: ['B', 'E']
+        type: 'letter'
+        data: 'A'
       }
     ]
-    for sectorData, i in sectorsData
-      sectorData._id = root.Sectors.insert(sectorData)
+    for sectorData, i in artefactsData
+      sectorData._id = root.Artefacts.insert(sectorData)

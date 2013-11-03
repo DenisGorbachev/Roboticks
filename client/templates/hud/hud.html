@@ -17,15 +17,17 @@
 
     <div class="hud">
         <table class="map">
-            {{#each rows}}
-                <tr>
-                    {{#each .}}
-                        <td class="sector {{#if own}}own{{/if}} {{#if enemy}}enemy{{/if}} {{#if letters}}letters{{/if}}">
-                            {{letter}}
-                        </td>
-                    {{/each}}
-                </tr>
-            {{/each}}
+            <tbody>
+                {{#each map}}
+                    <tr>
+                        {{#each .}}
+                            <td class="sector {{#if own}}own{{/if}} {{#if enemy}}enemy{{/if}} {{#if letters}}letters{{/if}}">
+                                {{letter}}
+                            </td>
+                        {{/each}}
+                    </tr>
+                {{/each}}
+            </tbody>
         </table>
     </div>
 

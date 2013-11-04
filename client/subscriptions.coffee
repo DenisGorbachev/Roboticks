@@ -1,9 +1,9 @@
 root = exports ? this
 
-root.Artefacts = new Meteor.Collection('artefacts', {
-  transform: (sector) ->
-    sector
+root.Shapes = new Meteor.Collection('shapes', {
+  transform: (shape) ->
+    shape
 })
 
-Meteor.subscribe 'artefacts'
+Meteor.subscribe 'visibleShapes'
 Meteor.subscribe 'userData'

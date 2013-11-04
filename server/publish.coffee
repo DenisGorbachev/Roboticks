@@ -1,13 +1,13 @@
 root = exports ? this
 
-root.Artefacts = new Meteor.Collection 'artefacts'
-root.Artefacts._ensureIndex({ coordinates : "2d" });
+root.Shapes = new Meteor.Collection 'shapes'
+root.Shapes._ensureIndex({ coordinates : "2d" });
 
-Meteor.publish('visible-artefacts', () ->
+Meteor.publish('visibleShapes', () ->
   if (!this.userId)
     return null;
-  user = Meteor.user()
-  root.Artefacts.find(
+  user = Meteor.users.findOne(this.userId);
+  root.Shapes.find(
     coordinates:
       $geoWithin:
         $box: [ [user.x - root.viewDistance, user.y - root.viewDistance], [user.x + root.viewDistance, user.y + root.viewDistance] ]
